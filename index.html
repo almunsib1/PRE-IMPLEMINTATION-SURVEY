@@ -6,6 +6,15 @@
   <title>Pre-Intervention Survey</title>
 
   <style>
+    .goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0px !important;
+}
     body {
       font-family: Arial, sans-serif;
       background: #f3f4f6;
@@ -137,7 +146,7 @@ function googleTranslateElementInit() {
     {
       pageLanguage: 'en',
       includedLanguages: 'ar,en,tr,ur,hi,fr,bn,id',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
     },
     'google_translate_element'
   );
