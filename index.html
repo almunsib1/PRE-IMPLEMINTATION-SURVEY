@@ -79,25 +79,7 @@
       font-size: 14px;
     }
 
-    .language-box {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.language-title {
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-
-.language-box button {
-  margin: 5px;
-  padding: 10px 14px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: white;
-  cursor: pointer;
-  font-size: 15px;
-}
+    
     <script>
 function changeLanguage(lang) {
   const select = document.querySelector(".goog-te-combo");
@@ -117,17 +99,7 @@ function changeLanguage(lang) {
   <h1>SURVEY</h1>
   <p class="subtitle">🌐 Please select your language before starting the survey</p>
 
-  <div class="language-box">
-  <div class="language-title">🌐 Choose Language</div>
-
-  <button onclick="changeLanguage('ar')">العربية</button>
-  <button onclick="changeLanguage('en')">English</button>
-  <button onclick="changeLanguage('tr')">Türkçe</button>
-  <button onclick="changeLanguage('ur')">اردو</button>
-  <button onclick="changeLanguage('hi')">हिन्दी</button>
-</div>
-
-<div id="google_translate_element" style="display:none;"></div>
+  <div id="google_translate_element"></div>
 
   <div style="background:#f9fafb;padding:20px;border-radius:15px;margin-bottom:30px;line-height:1.8;">
     <strong>Survey Objective:</strong><br><br>
