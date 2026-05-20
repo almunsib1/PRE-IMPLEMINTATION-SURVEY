@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pre-Intervention Survey</title>
-
-  <style>
-    .goog-logo-link,
-.goog-te-gadget span {
-  display: none !important;
-}
-
-.goog-te-gadget {
-  color: transparent !important;
-  font-size: 0px !important;
-}
+  <title>Survey</title>  <style>
     body {
       font-family: Arial, sans-serif;
       background: #f3f4f6;
@@ -42,9 +30,62 @@
       margin-bottom: 25px;
     }
 
-    #google_translate_element {
+    .language-box {
       text-align: center;
-      margin-bottom: 25px;
+      margin: 20px 0 25px;
+      padding: 18px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+    }
+
+    .language-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+
+    .language-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .language-buttons button {
+      padding: 10px 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 999px;
+      background: white;
+      cursor: pointer;
+      font-size: 15px;
+      min-width: 110px;
+    }
+
+    .language-buttons button:hover {
+      background: #f3f4f6;
+    }
+
+    #google_translate_element {
+      display: none;
+    }
+
+    .goog-logo-link,
+    .goog-te-gadget span {
+      display: none !important;
+    }
+
+    .goog-te-gadget {
+      color: transparent !important;
+      font-size: 0 !important;
+    }
+
+    .objective {
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      line-height: 1.8;
     }
 
     .question {
@@ -56,6 +97,15 @@
       font-size: 18px;
     }
 
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
     label {
       display: block;
       margin-bottom: 10px;
@@ -63,119 +113,111 @@
       cursor: pointer;
     }
 
-    button {
+    button[type="submit"] {
       width: 100%;
       padding: 15px;
       border: none;
       border-radius: 12px;
       font-size: 18px;
       cursor: pointer;
+      background: #111827;
+      color: white;
     }
 
-    .footer {
+    .thanks {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f9fafb;
+      border-radius: 15px;
       text-align: center;
-      margin-top: 20px;
-      color: #888;
-      font-size: 14px;
+      line-height: 1.8;
+      color: #444;
     }
-
-    
-    <script>
-function changeLanguage(lang) {
-  const select = document.querySelector(".goog-te-combo");
-  if (select) {
-    select.value = lang;
-    select.dispatchEvent(new Event("change"));
-  }
-}
-</script>
-  </style>
-</head>
-<body>
-
-<div class="container">
-
-  
+  </style></head>
+<body><div class="container">
   <h1>SURVEY</h1>
-  <p class="subtitle">🌐 Please select your language before starting the survey</p>
+  <p class="subtitle">Please select your language before starting the survey</p>  <div class="language-box">
+    <div class="language-title">🌐 Choose Language</div><select onchange="changeLanguage(this.value)" style="
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  min-width: 220px;
+">
+  <option value="">Select Language</option>
+  <option value="ar">العربية</option>
+  <option value="en">English</option>
+  <option value="ur">اردو</option>
+  <option value="hi">हिन्दी</option>
+  <option value="tr">Türkçe</option>
+  <option value="tl">Filipino</option>
+  <option value="bn">বাংলা</option>
+  <option value="id">Bahasa Indonesia</option>
+</select>
 
-  <div id="google_translate_element"></div>
-
-  <div style="background:#f9fafb;padding:20px;border-radius:15px;margin-bottom:30px;line-height:1.8;">
+  </div>  <div id="google_translate_element"></div>  <div class="objective">
     <strong>Survey Objective:</strong><br><br>
     This survey aims to measure the importance of providing medication instructions in your native language and its impact on proper medication use.
-  </div>
-
-  <form id="surveyForm">
-
+  </div>  <form id="surveyForm">
     <div class="question">
       <h3>FILE NUMBER</h3>
-      <input type="text" name="id" style="width:100%;padding:10px;border-radius:10px;border:1px solid #ccc;" />
-    </div>
-
-
-    <div class="question">
-      <h3>1. Do you have the ability to read and understand Arabic?</h3>
-
-      <label><input type="radio" name="q1"> Yes</label>
-      <label><input type="radio" name="q1"> No</label>
-    </div>
-
-    <div class="question">
-      <h3>2. Would you prefer medication instructions to be provided in your native language?</h3>
-
-      <label><input type="radio" name="q2"> Yes</label>
-      <label><input type="radio" name="q2"> No</label>
-    </div>
-
-    <div class="question">
-      <h3>3. To what extent do you believe that receiving medication instructions in your native language may improve your adherence?</h3>
-
-      <label><input type="radio" name="q3"> To a large extent</label>
-      <label><input type="radio" name="q3"> To some extent</label>
-      <label><input type="radio" name="q3"> To a small extent</label>
-      <label><input type="radio" name="q3"> Not at all</label>
-    </div>
-
-    <button type="submit">Submit</button>
-
-  </form>
-
-  <div style="margin-top:30px;padding:20px;background:#f9fafb;border-radius:15px;text-align:center;line-height:1.8;color:#444;">
-    Thank you for your cooperation and for being an active part of this survey.
-  </div>
-
-  <div class="footer">
-    The survey will automatically translate into your selected language.
-  </div>
-
+      <input type="text" name="id" required />
+    </div><div class="question">
+  <h3>1. Do you have the ability to read and understand Arabic?</h3>
+  <label><input type="radio" name="q1" value="Yes" required> Yes</label>
+  <label><input type="radio" name="q1" value="No"> No</label>
 </div>
 
-<script type="text/javascript">
+<div class="question">
+  <h3>2. Would you prefer medication instructions to be provided in your native language?</h3>
+  <label><input type="radio" name="q2" value="Yes" required> Yes</label>
+  <label><input type="radio" name="q2" value="No"> No</label>
+</div>
+
+<div class="question">
+  <h3>3. To what extent do you believe that receiving medication instructions in your native language may improve your adherence?</h3>
+  <label><input type="radio" name="q3" value="To a large extent" required> To a large extent</label>
+  <label><input type="radio" name="q3" value="To some extent"> To some extent</label>
+  <label><input type="radio" name="q3" value="To a small extent"> To a small extent</label>
+  <label><input type="radio" name="q3" value="Not at all"> Not at all</label>
+</div>
+
+<button type="submit">Submit</button>
+
+  </form>  <div class="thanks">
+    Thank you for your cooperation and for being an active part of this survey.
+  </div>
+</div><script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
     {
       pageLanguage: 'en',
-      includedLanguages: 'ar,en,tr,ur,hi,fr,bn,id',
-      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+      includedLanguages: 'ar,en,ur,hi,tr,tl,bn,id',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
     },
     'google_translate_element'
   );
 }
-</script>
 
-<script type="text/javascript"
-src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-</script>
-
-<script>
+function changeLanguage(lang) {
+  const interval = setInterval(function () {
+    const select = document.querySelector('.goog-te-combo');
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event('change'));
+      clearInterval(interval);
+    }
+  }, 300);
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script><script>
 document.getElementById("surveyForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
   const data = {
-    q1: document.querySelector('input[name="q1"]:checked')?.parentElement.innerText || "",
-    q2: document.querySelector('input[name="q2"]:checked')?.parentElement.innerText || "",
-    q3: document.querySelector('input[name="q3"]:checked')?.parentElement.innerText || ""
+    id: document.querySelector('input[name="id"]').value || "",
+    q1: document.querySelector('input[name="q1"]:checked')?.value || "",
+    q2: document.querySelector('input[name="q2"]:checked')?.value || "",
+    q3: document.querySelector('input[name="q3"]:checked')?.value || ""
   };
 
   await fetch("https://script.google.com/macros/s/AKfycbyyeGRX9xsDUlnxempuXad0y2WsHwrwWtQsaHWLHthiGeH229n1mP0rKjCYgEiYvss5/exec", {
@@ -184,8 +226,7 @@ document.getElementById("surveyForm").addEventListener("submit", async function(
   });
 
   alert("Survey submitted successfully!");
+  document.getElementById("surveyForm").reset();
 });
-</script>
-
-</body>
+</script></body>
 </html>
